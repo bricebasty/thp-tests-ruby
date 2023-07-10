@@ -1,14 +1,19 @@
-def translate (string)
-  vowels = %w{a e i o u}
-  string.gsub(/(\A|\s)\w+/) do |word|
-    word.strip!
-    was_capitalized = word[0] == word[0].upcase
-    while !vowels.include?(word[0].downcase) || (word[0].downcase == 'u' && word[-1].downcase == 'q')
-      word += word[0]
-      word = word[1..-1]
-    end
-    word = word.downcase
-    word[0] = word[0].upcase if was_capitalized
-    word = ' ' + word + 'ay'
-  end.strip
+# frozen_string_literal: true
+
+def translate(string)
+  string.gsub(/(\A|\s)\w+/) { |word| translate_word(word) }.strip
+end
+
+def translate_word(word)
+  word.strip!
+  was_capitalized = word[0] == word[0].upcase
+  word = process_word(word.downcase, was_capitalized)
+  " #{word}ay"
+end
+
+def process_word(word, was_capitalized)
+  vowels = %w[a e i o u]
+  word = word[1..] + word[0] while !vowels.include?(word[0]) || (word[0] == 'u' && word[-1] == 'q')
+  word[0] = word[0].upcase if was_capitalized
+  word
 end

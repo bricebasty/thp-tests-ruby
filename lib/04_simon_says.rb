@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 def echo(string)
-  return string
+  string
 end
 
 def shout(string)
@@ -11,8 +13,8 @@ def repeat(string, times = 2)
   repeated.join(' ')
 end
 
-def start_of_word(string,num)
-  return string[0, num]
+def start_of_word(string, num)
+  string[0, num]
 end
 
 def first_word(string)
@@ -20,15 +22,15 @@ def first_word(string)
 end
 
 def titleize(string)
-  little_words = ["and", "or", "the", "over", "a", "an", "but"]
+  little_words = %w[and or the over a an but]
 
   words = string.split.map.with_index do |word, index|
-    if index == 0 || !little_words.include?(word.downcase)
+    if index.zero? || !little_words.include?(word.downcase)
       word.capitalize
     else
       word.downcase
     end
   end
 
-  words.join(" ")
+  words.join(' ')
 end

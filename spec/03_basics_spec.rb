@@ -15,11 +15,11 @@ describe 'crazy stuff on strings' do
   # Reverse, upcase then removes all L, T and A.
   # Hint: google ruby string
   it 'does crazy stuff on strings' do
-    expect(reverse_upcase_noLTA("Tries this at Home, Kids"))
+    expect(reverse_upcase_nolta("Tries this at Home, Kids"))
       .to eq("SDIK ,EMOH  SIH SEIR")
-    expect(reverse_upcase_noLTA("Ponies loves carrots"))
+    expect(reverse_upcase_nolta("Ponies loves carrots"))
       .to eq("SORRC SEVO SEINOP")
-    expect(reverse_upcase_noLTA("qwertyuiopasdfghjkl;zxcvbn"))
+    expect(reverse_upcase_nolta("qwertyuiopasdfghjkl;zxcvbn"))
       .to eq("NBVCXZ;KJHGFDSPOIUYREWQ")
   end
 end
@@ -32,8 +32,8 @@ describe '42 finder' do
   # Hint: Should be 2 lines (and can be one :)
   # Hint: google ruby array each
   it 'finds 42' do
-    expect(array_42([1, 2, 3, 4, 5, 6, 7 , 8, 9, 10])).to eq false
-    expect(array_42([1, 2, 3, 4, 5, 6, 7 , 8, 9, 42, 21, 10.5])).to eq true
+    expect(array_forty_two([1, 2, 3, 4, 5, 6, 7 , 8, 9, 10])).to eq false
+    expect(array_forty_two([1, 2, 3, 4, 5, 6, 7 , 8, 9, 42, 21, 10.5])).to eq true
   end
 end
 

@@ -1,28 +1,30 @@
-def add(a, b)
-  return a + b
+# frozen_string_literal: true
+
+def add(number1, number2)
+  number1 + number2
 end
 
-def subtract(a, b)
-  return a - b
+def subtract(number1, number2)
+  number1 - number2
 end
 
 def sum(array)
-  return array.sum
+  array.sum
 end
 
-def multiply(a,b)
-  return a * b
+def multiply(number1, number2)
+  number1 * number2
 end
 
-def power(a, b)
-  return a ** b
+def power(number1, number2)
+  number1**number2
 end
 
-def factorial(n)
+def factorial(number)
   result = 1
-  while n > 0
-    result *= n
-    n -= 1
+  while number.positive?
+    result *= number
+    number -= 1
   end
   result
 end
